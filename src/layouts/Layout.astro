@@ -1,21 +1,12 @@
 ---
 import '../styles/global.css';
-import Navbar from '../components/Navbar.astro';
-import Footer from '../components/Footer.astro';
 
 interface Props {
-  title?: string;
-  description?: string;
-  image?: string;
+  title: string;
 }
 
-const {
-  title = 'Jake Fixes Tech — Computer Repair & Tech Services in Littleton, NH',
-  description = 'Affordable, honest computer repair, tech support and website design serving Littleton, NH and the North Country. Call or text (802) 234-1552.',
-  image = '/og-image.png'
-} = Astro.props;
-
-const canonicalURL = new URL(Astro.url.pathname, 'https://jakefixestech.com');
+const { title } = Astro.props;
+const currentPath = Astro.url.pathname;
 ---
 
 <!doctype html>
@@ -23,86 +14,90 @@ const canonicalURL = new URL(Astro.url.pathname, 'https://jakefixestech.com');
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Granite State Plumbing & Drain - Professional plumbing services in Littleton, NH and the North Country. Licensed, insured, and locally trusted." />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="generator" content={Astro.generator} />
-
-    <!-- Primary SEO -->
-    <title>{title}</title>
-    <meta name="description" content={description} />
-    <meta name="author" content="Jake Charland — Jake Fixes Tech LLC" />
-    <meta name="keywords" content="computer repair Littleton NH, tech support North Country, laptop repair New Hampshire, virus removal NH, data recovery NH, website design Littleton NH" />
-    <link rel="canonical" href={canonicalURL} />
-
-    <!-- Open Graph (Facebook, LinkedIn sharing) -->
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content={canonicalURL} />
-    <meta property="og:title" content={title} />
-    <meta property="og:description" content={description} />
-    <meta property="og:image" content={image} />
-    <meta property="og:site_name" content="Jake Fixes Tech" />
-    <meta property="og:locale" content="en_US" />
-
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content={title} />
-    <meta name="twitter:description" content={description} />
-    <meta name="twitter:image" content={image} />
-
-    <!-- Local Business Schema (helps Google understand you're a local business) -->
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "LocalBusiness",
-        "name": "Jake Fixes Tech LLC",
-        "description": "Affordable computer repair, tech support and website design serving Littleton NH and the North Country.",
-        "url": "https://jakefixestech.com",
-        "telephone": "+18022341552",
-        "email": "jake@jakefixestech.com",
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "28 Groves Street Apt 1",
-          "addressLocality": "Littleton",
-          "addressRegion": "NH",
-          "postalCode": "03561",
-          "addressCountry": "US"
-        },
-        "geo": {
-          "@type": "GeoCoordinates",
-          "latitude": 44.3045,
-          "longitude": -71.7745
-        },
-        "openingHoursSpecification": [
-          {
-            "@type": "OpeningHoursSpecification",
-            "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-            "opens": "17:00",
-            "closes": "19:30"
-          },
-          {
-            "@type": "OpeningHoursSpecification",
-            "dayOfWeek": ["Saturday", "Sunday"],
-            "opens": "09:00",
-            "closes": "16:00"
-          }
-        ],
-        "priceRange": "$$",
-        "areaServed": "Littleton NH and surrounding areas"
-      }
-    </script>
-
+    <title>{title} | Granite State Plumbing & Drain</title>
   </head>
-  <body>
-    <Navbar />
-    <slot />
-    <Footer />
+  <body class="min-h-screen bg-white text-navy-900 font-sans">
+    <!-- Header -->
+    <header class="bg-navy-900 text-white">
+      <div class="max-w-6xl mx-auto px-4 py-4">
+        <nav class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+          <a href="/" class="text-xl font-bold">
+            Granite State Plumbing & Drain
+          </a>
+          <ul class="flex gap-6 text-sm font-medium">
+            <li>
+              <a 
+                href="/" 
+                class:list={[
+                  "hover:text-navy-200",
+                  { "text-navy-200 underline underline-offset-4": currentPath === "/" }
+                ]}
+              >
+                Home
+              </a>
+            </li>
+            <li>
+              <a 
+                href="/services" 
+                class:list={[
+                  "hover:text-navy-200",
+                  { "text-navy-200 underline underline-offset-4": currentPath === "/services" }
+                ]}
+              >
+                Services
+              </a>
+            </li>
+            <li>
+              <a 
+                href="/contact" 
+                class:list={[
+                  "hover:text-navy-200",
+                  { "text-navy-200 underline underline-offset-4": currentPath === "/contact" }
+                ]}
+              >
+                Contact
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+      <slot />
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-navy-900 text-white mt-16">
+      <div class="max-w-6xl mx-auto px-4 py-8">
+        <div class="flex flex-col md:flex-row md:justify-between gap-6">
+          <div>
+            <p class="font-bold text-lg">Granite State Plumbing & Drain</p>
+            <p class="text-navy-200 text-sm mt-1">Littleton, NH</p>
+          </div>
+          <div class="text-sm text-navy-200">
+            <p>(603) 555-0100</p>
+            <p>granite@example.com</p>
+          </div>
+          <div class="text-sm text-navy-200">
+            <p>Mon–Fri: 7am–5pm</p>
+            <p>Sat: 8am–12pm</p>
+            <p>Sun: Closed</p>
+          </div>
+        </div>
+        <div class="border-t border-navy-700 mt-6 pt-6 text-center text-sm text-navy-300">
+          <p>&copy; {new Date().getFullYear()} Granite State Plumbing & Drain. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>
 
-<style>
-  html,
-  body {
-    margin: 0;
-    width: 100%;
-    height: 100%;
+<style is:global>
+  * {
+    box-sizing: border-box;
   }
 </style>

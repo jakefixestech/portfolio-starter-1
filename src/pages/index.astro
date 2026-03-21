@@ -1,17 +1,119 @@
 ---
-
+import Layout from '../layouts/Layout.astro';
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astroooooooo</h1>
-	</body>
-</html>
+<Layout title="Home">
+  <!-- Hero Section -->
+  <section class="bg-navy-900 text-white">
+    <div class="max-w-6xl mx-auto px-4 py-16 md:py-24 text-center">
+      <h1 class="text-3xl md:text-5xl font-bold leading-tight">
+        Granite State Plumbing & Drain
+      </h1>
+      <p class="mt-4 text-lg md:text-xl text-navy-200">
+        Serving the North Country Since Day One
+      </p>
+      <p class="mt-2 text-navy-300">
+        Littleton, NH & Surrounding Areas
+      </p>
+      <a 
+        href="/contact" 
+        class="inline-block mt-8 px-8 py-3 bg-white text-navy-900 font-semibold rounded hover:bg-navy-100"
+      >
+        Get a Free Estimate
+      </a>
+    </div>
+  </section>
+
+  <!-- Why Choose Us Section -->
+  <section class="py-16">
+    <div class="max-w-6xl mx-auto px-4">
+      <h2 class="text-2xl md:text-3xl font-bold text-center text-navy-900">
+        Why Choose Us
+      </h2>
+      <p class="mt-2 text-center text-navy-600 max-w-2xl mx-auto">
+        Your trusted local plumbing experts, committed to quality work and honest service.
+      </p>
+
+      <div class="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        <!-- Licensed & Insured -->
+        <div class="text-center">
+          <div class="w-16 h-16 mx-auto bg-navy-100 rounded-full flex items-center justify-center">
+            <svg class="w-8 h-8 text-navy-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+            </svg>
+          </div>
+          <h3 class="mt-4 font-semibold text-navy-900">Licensed & Insured</h3>
+          <p class="mt-2 text-sm text-navy-600">
+            Fully licensed professionals with comprehensive insurance for your peace of mind.
+          </p>
+        </div>
+
+        <!-- Fast Response -->
+        <div class="text-center">
+          <div class="w-16 h-16 mx-auto bg-navy-100 rounded-full flex items-center justify-center">
+            <svg class="w-8 h-8 text-navy-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+          </div>
+          <h3 class="mt-4 font-semibold text-navy-900">Fast Response</h3>
+          <p class="mt-2 text-sm text-navy-600">
+            Quick response times because we know plumbing emergencies can't wait.
+          </p>
+        </div>
+
+        <!-- Local & Trusted -->
+        <div class="text-center">
+          <div class="w-16 h-16 mx-auto bg-navy-100 rounded-full flex items-center justify-center">
+            <svg class="w-8 h-8 text-navy-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+            </svg>
+          </div>
+          <h3 class="mt-4 font-semibold text-navy-900">Local & Trusted</h3>
+          <p class="mt-2 text-sm text-navy-600">
+            Proudly serving Littleton and the North Country. We're your neighbors.
+          </p>
+        </div>
+
+        <!-- Free Estimates -->
+        <div class="text-center">
+          <div class="w-16 h-16 mx-auto bg-navy-100 rounded-full flex items-center justify-center">
+            <svg class="w-8 h-8 text-navy-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" />
+            </svg>
+          </div>
+          <h3 class="mt-4 font-semibold text-navy-900">Free Estimates</h3>
+          <p class="mt-2 text-sm text-navy-600">
+            No surprises. Get a clear, upfront estimate before any work begins.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="bg-navy-50 py-12">
+    <div class="max-w-6xl mx-auto px-4 text-center">
+      <h2 class="text-xl md:text-2xl font-bold text-navy-900">
+        Need a Plumber? We're Here to Help.
+      </h2>
+      <p class="mt-2 text-navy-600">
+        Call us today or send us a message for fast, reliable service.
+      </p>
+      <div class="mt-6 flex flex-col sm:flex-row gap-4 justify-center">
+        <a 
+          href="tel:6035550100" 
+          class="inline-block px-6 py-3 bg-navy-900 text-white font-semibold rounded hover:bg-navy-800"
+        >
+          Call (603) 555-0100
+        </a>
+        <a 
+          href="/contact" 
+          class="inline-block px-6 py-3 border-2 border-navy-900 text-navy-900 font-semibold rounded hover:bg-navy-900 hover:text-white"
+        >
+          Contact Us
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>
