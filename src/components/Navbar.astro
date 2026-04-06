@@ -1,11 +1,15 @@
 ---
-const currentPath = Astro.url.pathname;
+interface Props {
+  currentPath: string;
+}
+
+const { currentPath } = Astro.props;
 ---
 
 <header class="bg-navy-900 text-white">
   <div class="max-w-6xl mx-auto px-4 py-4">
     <nav aria-label="Main navigation" class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
-      <a href="/" aria-label="Granite State Plumbing & Drain - Home" class="text-xl font-bold hover:text-navy-200">
+      <a href="/" aria-label="Granite State Plumbing and Drain - Home" class="text-xl font-bold hover:text-navy-200">
         Granite State Plumbing & Drain
       </a>
       <ul class="flex gap-6 text-sm font-medium">

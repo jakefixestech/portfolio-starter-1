@@ -7,6 +7,7 @@ interface Props {
 }
 
 const { title } = Astro.props;
+const currentPath = Astro.url.pathname;
 ---
 
 <!doctype html>
@@ -20,7 +21,7 @@ const { title } = Astro.props;
   </head>
   <body class="min-h-screen bg-white text-navy-900 font-sans">
 
-    <Navbar />
+    <Navbar currentPath={currentPath} />
 
     <main>
       <slot />
@@ -44,7 +45,7 @@ const { title } = Astro.props;
             <p>Sun: Closed</p>
           </div>
         </div>
-        <div class="border-t border-navy-700 mt-6 pt-6 text:center text-sm text-navy-300">
+        <div class="border-t border-navy-700 mt-6 pt-6 text-center text-sm text-navy-300">
           <p>&copy; {new Date().getFullYear()} Granite State Plumbing & Drain. All rights reserved.</p>
         </div>
       </div>
