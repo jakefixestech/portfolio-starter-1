@@ -19,6 +19,20 @@ const ogImage = 'https://starter1.jakefixestech.com/plumber.jpg';
     <meta name="description" content="Granite State Plumbing & Drain - Professional plumbing services in Littleton, NH and the North Country. Licensed, insured, and locally trusted." />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <title>{title} | Granite State Plumbing & Drain</title>
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={`https://starter1.jakefixestech.com${currentPath}`} />
+    <meta property="og:title" content={`${title} | Granite State Plumbing & Drain`} />
+    <meta property="og:description" content="Granite State Plumbing & Drain - Professional plumbing services in Littleton, NH and the North Country. Licensed, insured, and locally trusted." />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:site_name" content="Granite State Plumbing & Drain" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={`${title} | Granite State Plumbing & Drain`} />
+    <meta name="twitter:description" content="Granite State Plumbing & Drain - Professional plumbing services in Littleton, NH and the North Country." />
+    <meta name="twitter:image" content={ogImage} />
   </head>
   <body class="min-h-screen bg-white text-navy-900 font-sans">
 
